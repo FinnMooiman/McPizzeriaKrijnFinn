@@ -42,6 +42,25 @@ def verwijderPizza(gerechtNaam):
     db.commit() #gegevens naar de database wegschrijven
     printTabel("tbl_pizzas")
 
+def pasGerechtAan(gerechtID, nieuweGerechtNaam, nieuwePrijs):
+    cursor.execute( "UPDATE tbl_pizzas SET gerechtNaam = ?, gerechtPrijs = ? WHERE gerechtID = ?", (nieuweGerechtNaam, nieuwePrijs, gerechtID ))
+    db.commit() #gegevens naar de database wegschrijven
+    
+    print("Gerecht aangepast")
+    printTabel("tbl_pizzas")
+
+def maakNieuweTabellen():
+    cursor.execute(""" 
+        CREATE TABLE IF NOT EXISTS tbl_klanten(
+        klantNr INTEGER PRIMARY KEY AUTOINCREMENT,
+        klantAchternaam TEXT);""")
+    print("Tabel 'tbl_klanten' aangemaakt.")
+
+def voegKlantToe(naam_nieuwe_klant):
+    cursor.execute("INSERT INTO tbl_klanten VALUES(NULL, ?)", (naam_nieuwe_klant,))
+    db.commit()
+    print("Klant toegevoegd:")
+    printTabel('tbl_klanten')
 
 ### --------- Hoofdprogramma  ---------------
 
@@ -55,3 +74,7 @@ printTabel("tbl_pizzas")
 # voegPizzaToe("Quattro Formaggi", 12.75)
 
 verwijderPizza("hawaii")
+
+pasGerechtAan(3, "Salamiiii", 19.25)
+
+voegKlantToe("Janssen")
