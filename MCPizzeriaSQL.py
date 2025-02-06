@@ -50,10 +50,7 @@ def pasGerechtAan(gerechtID, nieuweGerechtNaam, nieuwePrijs):
     printTabel("tbl_pizzas")
 
 def maakNieuweTabellen():
-    cursor.execute(""" 
-        CREATE TABLE IF NOT EXISTS tbl_klanten(
-        klantNr INTEGER PRIMARY KEY AUTOINCREMENT,
-        klantAchternaam TEXT);""")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS tbl_klanten(klantNr INTEGER PRIMARY KEY AUTOINCREMENT,klantAchternaam TEXT);""")
     print("Tabel 'tbl_klanten' aangemaakt.")
 
 def voegKlantToe(naam_nieuwe_klant):
@@ -76,5 +73,7 @@ printTabel("tbl_pizzas")
 verwijderPizza("hawaii")
 
 pasGerechtAan(3, "Salamiiii", 19.25)
+
+maakNieuweTabellen()
 
 voegKlantToe("Janssen")
