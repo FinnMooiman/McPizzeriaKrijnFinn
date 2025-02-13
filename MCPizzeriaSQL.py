@@ -61,7 +61,7 @@ def voegKlantToe(naam_nieuwe_klant):
 
 ### --------- Hoofdprogramma  ---------------
 
-maakTabellenAan()
+# maakTabellenAan()
 
 printTabel("tbl_pizzas")
 
@@ -72,8 +72,9 @@ printTabel("tbl_pizzas")
 
 verwijderPizza("hawaii")
 
-pasGerechtAan(3, "Salamiiii", 19.25)
+pasGerechtAan(3, "Salamiiii", 10.00)
 
 maakNieuweTabellen()
+# voegKlantToe("Jansen")
+# voegKlantToe("smits")
 
-voegKlantToe("Janssen")
