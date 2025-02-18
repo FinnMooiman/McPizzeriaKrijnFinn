@@ -61,7 +61,7 @@ def voegKlantToe(naam_nieuwe_klant):
 
 ### --------- Hoofdprogramma  ---------------
 
-# maakTabellenAan()
+#maakTabellenAan()
 
 printTabel("tbl_pizzas")
 
