@@ -59,22 +59,24 @@ def voegKlantToe(naam_nieuwe_klant):
     print("Klant toegevoegd:")
     printTabel('tbl_klanten')
 
+
 ### --------- Hoofdprogramma  ---------------
 
-#maakTabellenAan()
-
-printTabel("tbl_pizzas")
-
+# maakTabellenAan()
 # voegPizzaToe("Margarita", 9.50)
 # voegPizzaToe("hawaii", 12.25)
 # voegPizzaToe("salami", 10.0)
 # voegPizzaToe("Quattro Formaggi", 12.75)
+# voegKlantToe("Jansen")
+# voegKlantToe("smits")
+
+printTabel("tbl_pizzas")
+
 
 verwijderPizza("hawaii")
 
 pasGerechtAan(3, "Salamiiii", 10.00)
 
 maakNieuweTabellen()
-# voegKlantToe("Jansen")
-# voegKlantToe("smits")
+
 

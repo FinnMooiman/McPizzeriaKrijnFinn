@@ -15,6 +15,10 @@ import MCPizzeriaSQL
 
 ### ---------  Functie definities  -----------------
 
+def zoekKlant():
+    gevonden_klanten = MCPizzeriaSQL.zoekKlantInTabel(ingevoerde_klantnaam.get())
+    
+    print(gevonden_klanten) 
 
 ### --------- Hoofdprogramma  ---------------
 
@@ -28,8 +32,17 @@ Knopsluit.grid (row=17, column=4)
 labelIntro = Label(venster, text="Welkom!")
 labelIntro.grid(row=0, column=0, sticky="W")
 
+labelKlantnaam = Label(venster, text="Klantnaam:")
+labelKlantnaam.grid(row=1, column=0, sticky="W")
 
+ingevoerde_klantnaam = StringVar()
+invoerveldKlantnaam = Entry(venster, textvariable=ingevoerde_klantnaam)
+invoerveldKlantnaam.grid(row=1, column=1, sticky="W")
 
+invoerveldKlantNr = Entry(venster)
+invoerveldKlantNr.grid(row=2, column=1, sticky="W")
 
-#reageert op gebruikersinvoer, deze regel als laatste laten staan
+KnopZoekOpKlantnaam = Button(venster, text="Zoek Klant", width=12, command=zoekKlant)
+KnopZoekOpKlantnaam.grid (row=1, column=4)
+
 venster.mainloop()
