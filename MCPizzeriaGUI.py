@@ -29,11 +29,20 @@ def zoekKlant():
         #toon klantAchternaam, de tweede kolom uit het resultaat in de invoerveld
         invoerveldKlantnaam.insert(END, rij[1])
 
+def toonMenuInListbox():
+    listboxMenu.delete(0, END) #maak de listbox leeg
+    pizza_tabel = MCPizzeriaSQL.vraagOpGegevensPizzaTabel()
+    for regel in pizza_tabel: 
+        listboxMenu.insert(END, regel) #voeg elke regel uit resultaat in listboxMenu
+
 ### --------- Hoofdprogramma  ---------------
 
 venster = Tk()
-venster.iconbitmap("MC_icon.ico") #Let op: Dit werkt niet op een MAC! Zet deze regel dan in commentaar
+# venster.iconbitmap("MC_icon.ico") #Let op: Dit werkt niet op een MAC! Zet deze regel dan in commentaar
 venster.wm_title("MC Pizzeria")
+
+ListboxMenu = Listbox(venster, height=6, width=50)
+ListboxMenu.grid (row=2, column=1, rowspan=6, columnspan=2, sticky="W")
 
 Knopsluit = Button(venster, text="Sluiten", width = 12, command = venster.destroy)
 Knopsluit.grid (row=17, column=4)
@@ -53,5 +62,8 @@ invoerveldKlantNr.grid(row=2, column=1, sticky="W")
 
 KnopZoekOpKlantnaam = Button(venster, text="Zoek Klant", width=12, command=zoekKlant)
 KnopZoekOpKlantnaam.grid (row=1, column=4)
+
+knopToonPizzas = Button(venster, text="Toon alle pizza's", width=12, command=toonMenuInListbox)
+knopToonPizzas.grid(row=3, column=4)
 
 venster.mainloop()

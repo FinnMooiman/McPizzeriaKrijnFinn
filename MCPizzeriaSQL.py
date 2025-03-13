@@ -73,17 +73,21 @@ def zoekKlantInTabel(ingevoerde_klantnaam):
         zoek_resultaat = cursor.fetchall()
     return zoek_resultaat
 
-
+def vraagOpGegevensPizzaTabel():
+    cursor.execute("SELECT * FROM tbl_pizzas")
+    resultaat = cursor.fetchall()
+    print("Tabel tbl_pizzas:", resultaat)
+    return resultaat
 
 ### --------- Hoofdprogramma  ---------------
 
-# maakTabellenAan()
-# voegPizzaToe("Margarita", 9.50)
-# voegPizzaToe("hawaii", 12.25)
-# voegPizzaToe("salami", 10.0)
-# voegPizzaToe("Quattro Formaggi", 12.75)
-# voegKlantToe("Jansen")
-# voegKlantToe("smits")
+maakTabellenAan()
+voegPizzaToe("Margarita", 9.50)
+voegPizzaToe("hawaii", 12.25)
+voegPizzaToe("salami", 10.0)
+voegPizzaToe("Quattro Formaggi", 12.75)
+voegKlantToe("Jansen")
+voegKlantToe("smits")
 
 printTabel("tbl_pizzas")
 
@@ -93,4 +97,4 @@ pasGerechtAan(3, "Salamiiii", 10.00)
 
 maakNieuweTabellen()
 
-#zoekKlantInTabel()
+# zoekKlantInTabel()
